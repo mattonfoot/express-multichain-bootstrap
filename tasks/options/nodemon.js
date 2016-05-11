@@ -9,7 +9,7 @@ module.exports = (config) => ({
       'dist',
     ],
     ext: 'js',
-    watch: ['./bundle/node'],
+    watch: ['./containers/expressnode/lib'],
     delay: 500,
     legacyWatch: true,
   },
@@ -22,6 +22,6 @@ module.exports = (config) => ({
         HOST: config.env.HOST || '0.0.0.0',
       },
     },
-    script: './bundle/node',
+    script: './containers/expressnode/lib/server.js',
   },
 });

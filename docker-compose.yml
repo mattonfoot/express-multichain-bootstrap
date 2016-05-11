@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  # express server node
+  expressnode:
+    build: ./containers/expressnode
+    stdin_open: true
+    tty: true
+    expose:
+        - 9001
+    ports:
+        - "9001:9001"
+    environment:
+        PORT: 9001
+        HOST: 0.0.0.0

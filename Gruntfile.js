@@ -46,7 +46,7 @@ module.exports = grunt => {
   //grunt.registerTask('dock', ['dock:dev:build', 'dock:dev:start']);
 
   // local dev servers
-  grunt.registerTask('serve', ['rebuild', 'nodemon:local']);
+  grunt.registerTask('serve', ['rebuild', 'nodemon']);
 
   // default
   grunt.registerTask('default', [/* test, */ 'serve']);

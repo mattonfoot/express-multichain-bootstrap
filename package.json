@@ -2,11 +2,6 @@
   "name": "express-multichain",
   "version": "0.0.1",
   "description": "A bootstrap project for rapid experimentation on Multichain blockchains using light-weight HTML interfaces",
-  "main": "./lib/server",
-  "scripts": {
-    "start": "node ./lib/server",
-    "test": "./node_modules/grunt-cli/bin/grunt test"
-  },
   "keywords": [
     "bootstrap",
     "experiment",

@@ -1,0 +1,11 @@
+{
+  "name": "expressnode",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./lib/server.js"
+  },
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}

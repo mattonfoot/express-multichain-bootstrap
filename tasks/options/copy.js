@@ -1,17 +1,12 @@
 module.exports = config => ({
-  client: {
-    files: { './dist/index.html': ['./lib/index.html'] },
-  },
-  bundles: {
+  containers: {
     files: [
       {
         expand: true,
-        cwd: './lib/server/',
+        cwd: './lib/',
         src: ['**/*.*'],
-        dest: './bundle/node/',
+        dest: './containers/expressnode/lib/',
       },
-      { './bundle/node/client/index.html': './dist/index.html' },
-      { './bundle/node/client/app.js': './dist/app.js' },
     ],
   },
 });
