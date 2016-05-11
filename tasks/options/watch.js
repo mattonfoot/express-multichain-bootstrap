@@ -1,10 +1,6 @@
-module.exports = () => ({
+module.exports = config => ({
   src: {
-    files: 'lib/**/*.js',
-    tasks: ['test', 'build'],
-  },
-  test: {
-    files: 'test/**/*.*',
-    tasks: ['build:test', 'test'],
+    files: 'lib/**/*.*',
+    tasks: ['build'],
   },
 });

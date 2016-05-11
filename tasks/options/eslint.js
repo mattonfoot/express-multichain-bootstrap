@@ -1,4 +1,4 @@
-module.exports = () => ({
+module.exports = config => ({
   options: {
     eslintrc: true,
   },

@@ -1,4 +1,4 @@
-module.exports = () => ({
+module.exports = config => ({
   client: {
     files: { './dist/index.html': ['./lib/index.html'] },
   },

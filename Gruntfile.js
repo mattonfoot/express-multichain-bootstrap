@@ -35,23 +35,19 @@ module.exports = grunt => {
   // local tasks
   grunt.loadTasks('tasks');
 
-  // clean
-  // grunt.registerTask('clean', ['clean']);
-
   // test
-  grunt.registerTask('test', ['jshint', 'eslint']);
+  grunt.registerTask('lint', ['jshint', 'eslint']);
 
   // build
-  grunt.registerTask('build', ['browserify', 'copy']);
+  grunt.registerTask('build', ['lint', 'browserify', 'copy']);
   grunt.registerTask('rebuild', ['clean', 'build']);
 
   // docker containers
   //grunt.registerTask('dock', ['dock:dev:build', 'dock:dev:start']);
 
   // local dev servers
-  //grunt.registerTask('serve', ['nodemon:dev']);
-  //grunt.registerTask('serve:local', ['nodemon:local']);
+  grunt.registerTask('serve', ['rebuild', 'nodemon:local']);
 
-  // defualt
-  grunt.registerTask('default', ['test', 'rebuild', 'watch']);
+  // default
+  grunt.registerTask('default', [/* test, */ 'serve']);
 };
