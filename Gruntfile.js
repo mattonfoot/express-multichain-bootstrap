@@ -42,7 +42,7 @@ module.exports = grunt => {
   grunt.registerTask('test', ['jshint', 'eslint']);
 
   // build
-  grunt.registerTask('build', ['browserify', 'copy:client']);
+  grunt.registerTask('build', ['browserify', 'copy']);
   grunt.registerTask('rebuild', ['clean', 'build']);
 
   // docker containers
@@ -53,5 +53,5 @@ module.exports = grunt => {
   //grunt.registerTask('serve:local', ['nodemon:local']);
 
   // defualt
-  grunt.registerTask('default', ['test', 'build']);
+  grunt.registerTask('default', ['test', 'rebuild', 'watch']);
 };
