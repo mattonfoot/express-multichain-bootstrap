@@ -24,6 +24,13 @@
     "npm": ">=3.8.9"
   },
   "devDependencies": {
-    "grunt-cli": "^1.2.0"
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-eslint": "^18.1.0",
+    "load-grunt-tasks": "^3.5.0"
   }
 }

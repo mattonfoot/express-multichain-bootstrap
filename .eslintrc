@@ -21,8 +21,13 @@
     "no-unused-vars":             1,
     "quotes":                   [ 2, "single", "avoid-escape" ],
     "semi":                     [ 2, "always" ],
-    "space-after-keywords":     [ 2, "always" ],
-    "space-in-brackets":        [ 2, "always" ],
-    "space-unary-word-ops":       2
+    "keyword-spacing":            0,
+    "object-curly-spacing":       0,
+    "array-bracket-spacing":      0,
+    "computed-property-spacing":  0,
+    "space-unary-ops":            2
+  },
+  "parserOptions": {
+      "ecmaVersion": 6
   }
 }

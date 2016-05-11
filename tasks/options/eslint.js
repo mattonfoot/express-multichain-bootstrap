@@ -1,8 +1,10 @@
-module.exports = ({
+module.exports = () => ({
   options: {
-    jshintrc: '.jshintrc',
+    eslintrc: true,
   },
   gruntfile: ['Gruntfile.js', 'tasks/**/*.js'],
   src: ['lib/**/*.js'],
-  test: ['test/**/*.js'],
+
+  //  test: ['test/**/*.js'],
+
 });
