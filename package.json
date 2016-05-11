@@ -1,0 +1,29 @@
+{
+  "name": "express-multichain",
+  "version": "0.0.1",
+  "description": "A bootstrap project for rapid experimentation on Multichain blockchains using light-weight HTML interfaces",
+  "main": "./lib/server",
+  "scripts": {
+    "start": "node ./lib/server",
+    "test": "./node_modules/grunt-cli/bin/grunt test"
+  },
+  "keywords": [
+    "bootstrap",
+    "experiment",
+    "multichain",
+    "blockchain",
+    "express",
+    "node",
+    "HTML",
+    "interface"
+  ],
+  "author": "Matt Smith <mattonfoot@gmail.com> (http://about.me/mattonfoot)",
+  "license": "GPL-3.0",
+  "engines": {
+    "node": ">=6.1.0",
+    "npm": ">=3.8.9"
+  },
+  "devDependencies": {
+    "grunt-cli": "^1.2.0"
+  }
+}
