@@ -13,6 +13,7 @@ results
 coverage
 reports
 browser
+containers/express/dist
 
 node_modules
 npm-debug.log

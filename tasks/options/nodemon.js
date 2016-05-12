@@ -17,6 +17,6 @@ module.exports = (config) => ({
         HOST: config.env.HOST || '0.0.0.0',
       },
     },
-    script: './containers/expressnode/dist/server.js',
+    script: './containers/express/dist/server.js',
   },
 });

@@ -5,9 +5,9 @@ module.exports = config => ({
         expand: true,
         cwd: './lib/',
         src: ['**/*.*'],
-        dest: './containers/expressnode/dist/',
+        dest: './containers/express/dist/',
       },
-      { './containers/expressnode/dist/package.json': './package.json' },
+      { './containers/express/dist/package.json': './package.json' },
     ],
   },
 });

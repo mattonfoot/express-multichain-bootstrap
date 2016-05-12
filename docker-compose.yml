@@ -2,11 +2,11 @@ version: '2'
 
 services:
     # basenode:
-    #     build: kunstmaan/base-multichain
+    #     image: kunstmaan/base-multichain
     #     stdin_open: true
     #     tty: true
     masternode:
-        build: kunstmaan/master-multichain
+        image: kunstmaan/master-multichain
         stdin_open: true
         tty: true
         expose:
@@ -23,7 +23,7 @@ services:
             PARAM_ANYONE_CAN_CONNECT: anyone-can-connect|true
             PARAM_ANYONE_CAN_MINE: anyone-can-mine|true
     slavenode:
-        build: kunstmaan/node-multichain
+        image: kunstmaan/node-multichain
         stdin_open: true
         tty: true
         expose:
@@ -32,7 +32,7 @@ services:
         ports:
             - "8002:8002"
         environment:
-            CHAINNAME: MyChain
+            CHAINNAME: ExperimentalChain
             NETWORK_PORT: 7557
             RPC_PORT: 8002
             RPC_USER: multichain-experiments-rpc
@@ -44,7 +44,7 @@ services:
         depends_on:
             - masternode
     explorernode:
-        build: kunstmaan/explorer-multichain
+        image: kunstmaan/explorer-multichain
         stdin_open: true
         tty: true
         expose:
@@ -54,7 +54,7 @@ services:
         ports:
             - "2750:2750"
         environment:
-            CHAINNAME: MyChain
+            CHAINNAME: ExperimentalChain
             NETWORK_PORT: 7557
             RPC_PORT: 8002
             RPC_USER: multichain-experiments-rpc
@@ -66,7 +66,7 @@ services:
         depends_on:
             - masternode
     expressnode:
-        build: ./containers/expressnode
+        build: ./containers/express
         stdin_open: true
         tty: true
         expose:
@@ -74,8 +74,8 @@ services:
         ports:
             - "80:80"
         environment:
-            PORT: 80
-            HOST: 0.0.0.0
+            CHAINNAME: ExperimentalChain
+            NETWORK_PORT: 80
             RPC_USER: multichain-experiments-rpc
             RPC_PASSWORD: QzC3+n2pJR
             MC_NODE: slavenode
