@@ -35,6 +35,10 @@ module.exports = grunt => {
   // local tasks
   grunt.loadTasks('tasks');
 
+  // docker-compose
+  //grunt.registerTask('docker-compose', ['exec:docker-up']);
+  //grunt.registerTask('docker-clean', ['exec:docker-stop', 'exec:docker-remove']);
+
   // test
   grunt.registerTask('lint', ['jshint', 'eslint']);
 
@@ -42,12 +46,10 @@ module.exports = grunt => {
   grunt.registerTask('build', ['lint', 'browserify', 'copy']);
   grunt.registerTask('rebuild', ['clean', 'build']);
 
-  // docker containers
-  //grunt.registerTask('dock', ['dock:dev:build', 'dock:dev:start']);
-
   // local dev servers
-  grunt.registerTask('serve', ['rebuild', 'nodemon']);
+  grunt.registerTask('serve:local', ['rebuild', 'nodemon']);
+  // grunt.registerTask('serve:docker', ['rebuild', 'docker-compose']);
 
   // default
-  grunt.registerTask('default', [/* test, */ 'serve']);
+  grunt.registerTask('default', [/* test, */ 'rebuild']);
 };
