@@ -1,5 +1,6 @@
 {
-  "name": "express-multichain",
+  "name": "express-multichain-bootstrap",
+  "private": true,
   "version": "0.0.1",
   "description": "A bootstrap project for rapid experimentation on Multichain blockchains using light-weight HTML interfaces",
   "keywords": [
