@@ -7,7 +7,6 @@ module.exports = config => ({
         src: ['**/*.*'],
         dest: './containers/express/dist/',
       },
-      { './containers/express/dist/package.json': './package.json' },
     ],
   },
 });
