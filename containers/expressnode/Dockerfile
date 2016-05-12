@@ -1,9 +1,11 @@
-FROM risingstack/alpine:3.3-v4.2.6-1.1.3
+FROM node:latest
 MAINTAINER Matt Smith
 
-COPY package.json package.json
+ADD dist/ /src/dist
+WORKDIR /src/dist
+
+RUN ls -al /src/dist
+
 RUN npm install
 
-# Add your source files
-COPY . .
-RUN npm start
+CMD ["npm", "start"]

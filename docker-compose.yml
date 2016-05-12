@@ -2,14 +2,12 @@ version: '2'
 
 services:
   # express server node
-  expressnode:
+  web:
     build: ./containers/expressnode
-    stdin_open: true
-    tty: true
     expose:
-        - 9001
+        - 80
     ports:
-        - "9001:9001"
+        - "80:80"
     environment:
-        PORT: 9001
+        PORT: 80
         HOST: 0.0.0.0

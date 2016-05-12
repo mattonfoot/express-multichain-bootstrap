@@ -2,14 +2,9 @@ module.exports = (config) => ({
   options: {
     callback: (nodemon) => nodemon.on('log', (event) => console.log(event.colour)),
     cwd: __dirname + '/../../',
-    ignore: [
-      'node_modules/**',
-      'tasks',
-      'test',
-      'dist',
-    ],
+    ignore: [],
     ext: 'js',
-    watch: ['./containers/expressnode/lib'],
+    watch: ['./dist'],
     delay: 500,
     legacyWatch: true,
   },
@@ -22,6 +17,6 @@ module.exports = (config) => ({
         HOST: config.env.HOST || '0.0.0.0',
       },
     },
-    script: './containers/expressnode/lib/server.js',
+    script: './containers/expressnode/dist/server.js',
   },
 });

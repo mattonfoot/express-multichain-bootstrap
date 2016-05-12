@@ -1,5 +1,5 @@
 module.exports = config => ({
   containers: {
-    src: ['./containers/expressnode/lib'],
+    src: ['./containers/expressnode/dist'],
   },
 });
