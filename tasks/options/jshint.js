@@ -3,7 +3,10 @@ module.exports = config => ({
     jshintrc: '.jshintrc',
   },
   gruntfile: ['Gruntfile.js', 'tasks/**/*.js'],
-  src: ['lib/**/*.js'],
+  src: [
+    'lib/ui/**/*.js',
+    'lib/routes/**/*.js',
+  ],
 
   //  test: ['test/**/*.js'],
 

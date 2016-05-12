@@ -4,8 +4,6 @@ MAINTAINER Matt Smith
 ADD dist/ /src/dist
 WORKDIR /src/dist
 
-RUN ls -al /src/dist
-
-RUN npm install
-
+CMD ["npm", "install"]
+CMD ["chmod", "a+x bin/www"]
 CMD ["npm", "start"]

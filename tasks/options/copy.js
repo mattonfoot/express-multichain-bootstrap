@@ -7,6 +7,7 @@ module.exports = config => ({
         src: ['**/*.*'],
         dest: './containers/express/dist/',
       },
+      { './containers/express/dist/bin/www': './lib/bin/www' },
     ],
   },
 });
