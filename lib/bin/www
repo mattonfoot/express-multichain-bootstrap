@@ -7,13 +7,17 @@ var http =  require('http');
 const normalizePort = (val) => {
   var port = parseInt(val, 10);
 
-  if (isNaN(port)) return val;
+  if (isNaN(port)) {
+    return val;
+  }
 
   return port >= 0 ? port : false;
 };
 
 const onError = (error) => {
-  if (error.syscall !== 'listen') throw error;
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
 
   var bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
 
@@ -45,6 +49,13 @@ const onListening = (server) => () => {
 // environment variables
 var port = normalizePort(process.env.NETWORK_PORT || '3000');
 app.set('port', port);
+
+app.locals.multichain = {
+  host: process.env.RPC_NODE,
+  port: process.env.RPC_PORT,
+  user: process.env.RPC_USER,
+  pass: process.env.RPC_PASSWORD,
+};
 
 // create server for application
 var server = http.createServer(app);

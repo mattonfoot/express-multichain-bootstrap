@@ -76,10 +76,11 @@ services:
         environment:
             CHAINNAME: ExperimentalChain
             NETWORK_PORT: 80
+            RPC_NODE: masternode
+            RPC_PORT: 8002
             RPC_USER: multichain-experiments-rpc
             RPC_PASSWORD: QzC3+n2pJR
-            MC_NODE: slavenode
         links:
-            - slavenode
+            - masternode
         depends_on:
-            - slavenode
+            - masternode

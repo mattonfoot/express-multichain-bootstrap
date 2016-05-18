@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:4.4.4
 MAINTAINER Matt Smith
 
 ADD dist/ /src/dist
