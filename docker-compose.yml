@@ -1,10 +1,6 @@
 version: '2'
 
 services:
-    # basenode:
-    #     image: kunstmaan/base-multichain
-    #     stdin_open: true
-    #     tty: true
     masternode:
         image: kunstmaan/master-multichain
         stdin_open: true
@@ -22,27 +18,6 @@ services:
             PARAM_TARGET_BLOCK_SIZE: target-block-time|30
             PARAM_ANYONE_CAN_CONNECT: anyone-can-connect|true
             PARAM_ANYONE_CAN_MINE: anyone-can-mine|true
-    slavenode:
-        image: kunstmaan/node-multichain
-        stdin_open: true
-        tty: true
-        expose:
-            - 7557
-            - 8002
-        ports:
-            - "8002:8002"
-        environment:
-            CHAINNAME: ExperimentalChain
-            NETWORK_PORT: 7557
-            RPC_PORT: 8002
-            RPC_USER: multichain-experiments-rpc
-            RPC_PASSWORD: QzC3+n2pJR
-            RPC_ALLOW_IP: 0.0.0.0/0.0.0.0
-            MASTER_NODE: masternode
-        links:
-            - masternode
-        depends_on:
-            - masternode
     explorernode:
         image: kunstmaan/explorer-multichain
         stdin_open: true

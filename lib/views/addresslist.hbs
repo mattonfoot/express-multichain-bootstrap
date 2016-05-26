@@ -1,34 +1,38 @@
 <div class="container">
   <div class="page-header">
-    <h1>Address: {{address}}</h1>
+    <h1>{{title}}</h1>
   </div>
 
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h2 class="panel-title">Balances</h2>
+      <form action="/address/" method="post" class="form-inline pull-right">
+        <button type="submit" class="btn btn-default">New</button>
+      </form>
+      <h2 class="panel-title">Known Addresses</h2>
     </div>
-
-    <dl class="dl-horizontal">
-    {{#each balances as |balance|}}
-      <dt>{{balance.name}}</dt>
-      <dd>{{balance.qty}}</dd>
-    {{/each}}
-    </dl>
+    <ul class="list-group">
+      {{#each addresses as |address|}}
+      <li class="list-group-item">
+        <a href="/address/{{address}}" class="btn btn-default pull-right">View</a>
+        <h4 class="list-group-item-heading">{{address}}</h4>
+        <p class="list-group-item-text">Summary of account here...</p>
+      </li>
+      {{/each}}
+    </ul>
   </div>
 
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h2 class="panel-title">Transfer assets to another address</h2>
+      <h2 class="panel-title">Issue new Assets</h2>
     </div>
-
     <div class="panel-body">
-      <form action="/address/{{address}}/send/" method="post" class="form-horizontal">
+      <form action="/address/issue/" method="post" class="form-horizontal">
         <div class="form-group">
-          <label for="to" class="col-sm-2 control-label">Recipient</label>
+          <label for="address" class="col-sm-2 control-label">Recipient</label>
           <div class="col-sm-10">
-            <select name="to" id="to" class="form-control">
-              {{#each recipients as |recipient|}}
-              <option value="{{recipient}}">{{recipient}}</option>
+            <select name="address" id="address" class="form-control">
+              {{#each addresses as |address|}}
+              <option value="{{address}}">{{address}}</option>
               {{/each}}
             </select>
           </div>
@@ -36,11 +40,7 @@
         <div class="form-group">
           <label for="asset" class="col-sm-2 control-label">Token name</label>
           <div class="col-sm-10">
-            <select name="asset" id="asset" class="form-control">
-              {{#each balances as |asset|}}
-              <option value="{{asset.assetref}}">{{asset.name}}</option>
-              {{/each}}
-            </select>
+            <input name="asset" id="asset" placeholder="Name of token..." class="form-control">
           </div>
         </div>
         <div class="form-group">
@@ -61,5 +61,4 @@
       </form>
     </div>
   </div>
-
 </div>
