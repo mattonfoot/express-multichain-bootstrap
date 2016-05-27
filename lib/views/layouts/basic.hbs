@@ -1,11 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
   {{>head}}
-  <body>
-    {{{body}}}
+</head>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.js"></script>
-    <script src="/s/main.js"></script>
-  </body>
+<body>
+  <header class="nice-tophat" role="banner">
+    <div class="nice-global" id="nice-global">
+      <div class="tophat-inner">
+        <ul class="menu">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main role="main-content" class="container">
+    {{{body}}}
+  </main>
+
+  <footer class="footer-wrapper" role="contentinfo">
+    <div class="footer">
+      <div class="container">
+        <ul class="nav nav-legal" role="navigation">
+          <li><a href="https://about.me/mattonfoot">About</a></li>
+          <li><a href="https://twitter.com/mattonfoot">@mattonfoot</a></li>
+        </ul>
+
+        <p class="legal-copyright">Copyright &copy; 2016 mattonfoot.com. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="http://mattonfoot.github.io/NICE.UI/scripts/vendor/jquery.js"></script>
+  <script src="http://mattonfoot.github.io/NICE.UI/scripts/ui.eprivacy-policy.js"></script>
+  <script src="http://mattonfoot.github.io/NICE.UI/scripts/plugins/imageroll.js"></script>
+</body>
 </html>
