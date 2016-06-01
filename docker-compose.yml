@@ -41,7 +41,7 @@ services:
         depends_on:
             - masternode
     expressnode:
-        build: ./containers/express
+        build: .
         stdin_open: true
         tty: true
         expose:
